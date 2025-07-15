@@ -2,11 +2,11 @@
 
 This repository used to contain an implementation of the famous [Trapped in a cabin with Lord Byron](Rules.md) game by Oliver Darkshire.
 
-But sometimes, bad things happens, like using a `rm -rf .` command at root directory, or inputing a lot of commands without checking the results...
+But sometimes, bad things happens, like using a `rm -rf .` command at root directory, or inputting a lot of commands without checking the results...
 In our case, a dreadful `push -f` was done after a messy combination of bad recursive deletions, and all source code was lost.
-Attempts were made to recover what was salvageable but alas, the save file was also corrupt and we could not recover anything...
+Attempts were made to recover what was salvageable but alas, the save file was also corrupt, and we could not recover anything...
 
-That was what we though after we saw the corruption error on the screen after 3 hours of trying to understand how to unpack a `tar.gz`. And then we realized that the tests were still there !
+That was what we thought after we saw the corruption error on the screen after 3 hours of trying to understand how to unpack a `tar.gz`. And then we realized that the tests were still there !
 
 Your mission is simple : save us and recreate the code that matches the tests ! (because we are not trusted to touch a keyboard ever again)
 
@@ -34,36 +34,16 @@ Commit often, say what you did in your commit message.
 ### Rule #4 : Implement only what is described in the tests
 Tests give you a full vision of what the classes you create should look like. Don't add more methods than strictly necessary. And don't add classes or interfaces that are not described in the tests !
 
-Don't you dare adding getters everywhere !
+Don't you dare add getters everywhere !
 
 ### Rule #5 : Final coverage should be at least at good as the previous one
 This is the previous test coverage report :
 ![OriginalCoverage.png](OriginalCoverage.png)
 
 Your code should have a better score that this because *someone* had the audacity to put a `toString()` method in `Score` and did not test it !
-
-To generate it, just run `mvn verify` and browse to `target/jacoco/index.html` (this will only generate if all tests are green)
+(note that this issue only happened in the Java word. The C# word achieved 100%)
 
 ## What to do now ?
-### What you will need
-- Java 21
-- Maven 3.8.X
-- Git
-- an IDE could be useful (but you can use VI, I don't mind)
-
-### How to proceed
-- Fork this repository
-- Checkout
-- Take a look at the [rules](Rules.md) (keep it opened somewhere)
-- Take a look inside directory `src/test/java/fr/eulbobo/dojo/byron/domain`
-- Proceed in alphabetical order (trust me on that one)
-- Start coding
-
-### Any tips ?
-Depending on your setup, you may first need to create all classes / interfaces as empty shells to allow project compilation. Watch out for your IDE trying to be smart (it is not smart enough).
-
-A example output of the previous project can be found in the file named [output.txt](output.txt).
-Some things in this log are not in the tests, meaning that you should not implement them :
-- Displaying each of the dice roll result
-- Displaying the number of rounds at the end
-- Displaying the end score
+Choose your path carefully adventurer : 
+- You can venture into the forest to find the [Java version](java/Readme_TheJavaVersion.md)
+- You can venture into the dungeon to find the [C# version](Csharp/Readme_TheCSharpVersion.md)
